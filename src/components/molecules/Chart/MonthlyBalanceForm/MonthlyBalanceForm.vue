@@ -31,7 +31,7 @@ watch(
 onMounted(async () => {
   const transactionsYears = await transactionStore.getTransactionsYears
 
-  monthlyBalanceSelect.value = transactionsYears.map((year) => ({
+  monthlyBalanceSelect.value = transactionsYears.map((year: any) => ({
     value: year.year,
     label: `${year.year} (${year.totalTransactions})`,
   }))

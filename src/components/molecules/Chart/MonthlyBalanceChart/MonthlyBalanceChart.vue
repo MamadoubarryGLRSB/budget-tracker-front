@@ -15,7 +15,8 @@ const chartRef = ref<HTMLCanvasElement | null>(null)
 let chartInstance: Chart | null = null
 
 const loadChart = async (year: number) => {
-  const monthlyBalance: MonthlyBalanceInterface[] = await chartStore.getMonthlyBalance(year)
+  const monthlyBalanceData = await chartStore.getMonthlyBalance(year)
+  const monthlyBalance: MonthlyBalanceInterface[] = monthlyBalanceData || []
 
   const labels = monthlyBalance.map((d) => `Month ${d.month}`)
   const incomes = monthlyBalance.map((d) => d.incomes)
@@ -52,7 +53,7 @@ const loadChart = async (year: number) => {
   }
 
   const config = {
-    type: 'bar',
+    type: 'bar' as const,
     data,
     options: {
       responsive: true,

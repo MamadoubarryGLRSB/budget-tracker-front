@@ -55,7 +55,7 @@ const onFinish = async () => {
   if (formState.status === 'update' && categoryData !== undefined) {
     // Update category
     if (formState.id && formState.name) {
-      if (formState.name !== categoryData.name) {
+      if (typeof categoryData === 'object' && categoryData !== false && formState.name !== categoryData.name) {
         status = await categoryStore.update({
           id: formState.id,
           name: formState.name,

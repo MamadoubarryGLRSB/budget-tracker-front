@@ -43,7 +43,7 @@ watch(
   () => formState.accountId,
   (newAccountId) => {
     const selectedAccount = savingAccountStore.getSavingAccountById(newAccountId)
-    formState.accountCurrency = selectedAccount?.currency || ''
+    formState.accountCurrency = (typeof selectedAccount === 'object' && selectedAccount !== false) ? selectedAccount.currency : ''
   },
   { immediate: true },
 )
@@ -75,7 +75,7 @@ const onFinish = async () => {
     transactionData = transactionStore.getTransactionById(formState.id)
   }
 
-  if (formState.status === 'update' && transactionData !== undefined) {
+  if (formState.status === 'update' && transactionData !== undefined && typeof transactionData === 'object' && transactionData !== false) {
     // Update transaction
     if (
       formState.id &&
