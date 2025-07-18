@@ -1,0 +1,41 @@
+{
+  "token": {
+    "colorPrimary": "#4338ca",
+    "colorInfo": "#4338ca",
+    "colorSuccess": "#009c12",
+    "borderRadius": 10,
+    "colorTextBase": "#231d5f",
+    "colorBgBase": "#ffffff",
+    "colorTextHeading": "#4338CA",
+    "colorSuccessBg": "#cdf1cb"
+  },
+  "components": {
+    "Anchor": {
+      "lineWidth": 1,
+      "lineWidthBold": 4,
+      "fontSize": 16
+    },
+    "Breadcrumb": {
+      "colorBgTextHover": "#EDF1FF",
+      "colorText": "#4338CA"
+    },
+    "Button": {
+      "controlTmpOutline": "rgba(0, 0, 0, 0.02)"
+    },
+    "Table": {
+      "colorBgContainer": "#EDF1FF",
+      "controlItemBgActive": "#f4f0ff",
+      "colorTextPlaceholder": "rgba(0, 0, 0, 0.25)",
+      "colorSplit": "rgba(5, 5, 5, 0.06)",
+      "colorFillSecondary": "rgba(67, 56, 202, 0.4)",
+      "colorFillContent": "rgba(67, 56, 202, 0.4)",
+      "colorBorderSecondary": "#f0f0f0",
+      "colorFillAlter": "rgba(67, 56, 202, 0.2)"
+    },
+    "Tag": {
+      "borderRadiusSM": 99,
+      "marginXS": 8,
+      "paddingXXS": 4
+    }
+  }
+}
