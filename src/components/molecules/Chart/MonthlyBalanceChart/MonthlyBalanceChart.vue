@@ -29,7 +29,7 @@ const loadChart = async (year: number) => {
       {
         label: 'Balance',
         data: balances,
-        type: 'line',
+        type: 'line' as const,
         borderColor: '#4338ca',
         backgroundColor: 'transparent',
         tension: 0.25,
@@ -66,7 +66,7 @@ const loadChart = async (year: number) => {
         },
       },
     },
-  }
+  } as any
 
   // Destroy the old graph
   if (chartInstance) {

@@ -20,6 +20,7 @@ export const useUserStore = defineStore('user', {
     user: {} as UserInterface,
     token: '' as string,
     status: {} as StatusInterface,
+    isLogin: false as boolean,
   }),
 
   getters: {

@@ -95,7 +95,7 @@ const openDrawer = (transaction: TransactionInterface) => {
           <TransactionForm status="create" />
 
           <div
-            v-if="savingAccountBalance !== null && typeof savingAccountBalance === 'object' && savingAccountBalance !== false"
+            v-if="savingAccountBalance !== null && typeof savingAccountBalance === 'object'"
             class="table-header-balance"
           >
             Total balance

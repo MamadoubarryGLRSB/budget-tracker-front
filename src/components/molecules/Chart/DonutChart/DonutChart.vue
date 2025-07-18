@@ -122,7 +122,6 @@ watch(
 
 <template>
   <a-empty
-    :image="simpleImage"
     v-if="!availableData"
   />
   <div

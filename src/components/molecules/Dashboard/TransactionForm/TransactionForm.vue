@@ -20,7 +20,7 @@ const savingAccountStore = useSavingAccountStore()
 const transactionStore = useTransactionStore()
 
 const transactionFormRef = ref()
-const formState = <TransactionFormInterface>reactive({
+const formState = reactive({
   id: props.id,
   accountId: props.accountId,
   accountCurrency: props.accountCurrency,
@@ -31,7 +31,7 @@ const formState = <TransactionFormInterface>reactive({
   amount: props.amount,
   type: props.type,
   status: props.status,
-})
+} as any)
 const formName =
   formState.status === 'create' ? 'transactionFormCreate' : 'transactionForm' + formState.id
 const formLoading = ref<boolean>(false)
@@ -43,7 +43,7 @@ watch(
   () => formState.accountId,
   (newAccountId) => {
     const selectedAccount = savingAccountStore.getSavingAccountById(newAccountId)
-    formState.accountCurrency = (typeof selectedAccount === 'object' && selectedAccount !== false) ? selectedAccount.currency : ''
+    formState.accountCurrency = (typeof selectedAccount === 'object' && selectedAccount) ? selectedAccount.currency : ''
   },
   { immediate: true },
 )
@@ -144,7 +144,7 @@ const onFinish = async () => {
     formState.accountId = props.accountId
     formState.categoryId = props.categoryId
     formState.recipientId = props.recipientId
-    formState.date = props.date ? dayjs(props.date) : undefined
+    formState.date = props.date ? dayjs(props.date) : undefined as any
     formState.description = props.description
     formState.amount = props.amount
     formState.type = props.type

@@ -1,6 +1,6 @@
-import { RecipientInterface } from './recipient.interface'
-import { SavingAccountInterface } from './saving-account.interface'
-import { CategoryInterface } from './category.interface'
+import type { RecipientInterface } from './recipient.interface'
+import type { SavingAccountInterface } from './saving-account.interface'
+import type { CategoryInterface } from './category.interface'
 
 export interface TransactionInterface {
   id: string
